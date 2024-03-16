@@ -52,13 +52,13 @@ class _ExpensesState extends State<Expenses> {
      ScaffoldMessenger.of(context).clearSnackBars();
      ScaffoldMessenger.of(context).showSnackBar(
          SnackBar(
-           duration: Duration(seconds: 3),
+           duration: const Duration(seconds: 3),
            action: SnackBarAction(label: 'Undo', onPressed: (){
              setState(() {
                _registeredExpenses.insert(expenseIndex, expense);
              });
            }),
-           content: Text("Expense Deleted"),),);
+           content: const Text("Expense Deleted"),),);
    }
 
 
@@ -66,8 +66,7 @@ class _ExpensesState extends State<Expenses> {
 
   Widget build(BuildContext context) {
    final width = MediaQuery.of(context).size.width;
-    print(MediaQuery.of(context).size.height);
-     Widget maincontent = Center(
+     Widget maincontent = const Center(
        child: Text("NO expense found. Start adding some!"),
      );
      if(_registeredExpenses.isNotEmpty){
@@ -77,12 +76,12 @@ class _ExpensesState extends State<Expenses> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Expense Tracker"
         ),
         actions: [
           IconButton(onPressed: _openAddExpenseOverlay,
-              icon: Icon(Icons.add))
+              icon: const Icon(Icons.add))
         ],
       ),
       body: width < 600

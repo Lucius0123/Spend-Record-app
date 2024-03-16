@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:spend_record/models/expense.dart';
 
 class NewExpense extends StatefulWidget {
@@ -37,14 +36,14 @@ class _NewExpenseState extends State<NewExpense> {
       showDialog(
         context: context,
         builder: (ctx) => AlertDialog(
-          title: Text("Invalid Input"),
-          content: Text("Please make sure a valid title,amount and date"),
+          title: const Text("Invalid Input"),
+          content: const Text("Please make sure a valid title,amount and date"),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.pop(ctx);
               },
-              child: Text("Okey"),
+              child: const Text("Okey"),
             )
           ],
         ),
@@ -87,12 +86,12 @@ class _NewExpenseState extends State<NewExpense> {
                         child: TextField(
                           controller: _titleController,
                           maxLength: 50,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             label: Text("Title"),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 24,
                       ),
                       Expanded(
@@ -100,7 +99,7 @@ class _NewExpenseState extends State<NewExpense> {
                           controller: _amountController,
                           keyboardType: TextInputType.number,
                           maxLength: 50,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               label: Text("Amount"), prefixText: '\$'),
                         ),
                       ),
@@ -110,7 +109,7 @@ class _NewExpenseState extends State<NewExpense> {
                   TextField(
                     controller: _titleController,
                     maxLength: 50,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       label: Text("Title"),
                     ),
                   ),
@@ -137,7 +136,7 @@ class _NewExpenseState extends State<NewExpense> {
                               _selectedCategory = value;
                             });
                           }),
-                      SizedBox(
+                      const SizedBox(
                         width: 24,
                       ),
                       Expanded(
@@ -150,7 +149,7 @@ class _NewExpenseState extends State<NewExpense> {
                                 : formatter.format(_selectedDate!)),
                             IconButton(
                                 onPressed: _presentDatePicker,
-                                icon: Icon(Icons.calendar_month))
+                                icon: const Icon(Icons.calendar_month))
                           ],
                         ),
                       )
@@ -164,11 +163,11 @@ class _NewExpenseState extends State<NewExpense> {
                           controller: _amountController,
                           keyboardType: TextInputType.number,
                           maxLength: 50,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               label: Text("Amount"), prefixText: '\$'),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 16,
                       ),
                       Expanded(
@@ -181,32 +180,31 @@ class _NewExpenseState extends State<NewExpense> {
                                 : formatter.format(_selectedDate!)),
                             IconButton(
                                 onPressed: _presentDatePicker,
-                                icon: Icon(Icons.calendar_month))
+                                icon: const Icon(Icons.calendar_month))
                           ],
                         ),
                       )
                     ],
                   ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 if (width >= 600)
                   Row(
                     children: [
-                      Spacer(),
+                      const Spacer(),
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: Text("Cancel"),
+                        child: const Text("Cancel"),
                       ),
                       ElevatedButton(
                         onPressed: () {
                           _submitExpenseData();
-                          print(_titleController.text);
-                          print(_amountController.text);
+
                         },
-                        child: Text("Save Expense"),
+                        child: const Text("Save Expense"),
                       )
                     ],
                   )
@@ -233,20 +231,19 @@ class _NewExpenseState extends State<NewExpense> {
                               _selectedCategory = value;
                             });
                           }),
-                      Spacer(),
+                      const Spacer(),
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: Text("Cancel"),
+                        child: const Text("Cancel"),
                       ),
                       ElevatedButton(
                         onPressed: () {
                           _submitExpenseData();
-                          print(_titleController.text);
-                          print(_amountController.text);
+
                         },
-                        child: Text("Save Expense"),
+                        child: const Text("Save Expense"),
                       )
                     ],
                   )

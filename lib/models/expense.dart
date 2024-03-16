@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 import 'package:intl/intl.dart';
 final formatter = DateFormat.yMd();
- final uuid = Uuid();
+ final uuid = const Uuid();
  enum Category {
    food,travel,leisure,work
  }
